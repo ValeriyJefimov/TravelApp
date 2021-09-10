@@ -154,11 +154,11 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         state.searchState = .live
         return .none
         
-    case .search(.searchEnded):
+    case .search(.action(.searchEnded)):
         state.searchState = nil
         return .none
         
-    case let .search(.presentAlert(error)):
+    case let .search(.action(.presentAlert(error))):
         return .init(value: .presentAlert(error))
         
     case .search:
@@ -192,16 +192,12 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         state.categoryList = CategoryListState(category: category)
         return .none
         
-    case .category(.dissmiss):
-        return .init(value: .dissmissCategory)
+    case .category(.action(.dissmiss)):
+        state.categoryList = nil
+        return .none
         
     case .category:
         return .none
-        
-    case .dissmissCategory:
-        state.categoryList = nil
-        return .none
-    
     }
 }
 .debugActions()
@@ -209,7 +205,6 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
 let homeReducer = Reducer
     .combine(
         searchReducer
-            .optional()
             .pullback(state: \.searchState,
                       action: /HomeAction.search,
                       environment: {
@@ -221,7 +216,6 @@ let homeReducer = Reducer
                       }
             ),
         categoryListReducer
-            .optional()
             .pullback(state: \.categoryList,
                       action: /HomeAction.category,
                       environment: {

@@ -9,9 +9,7 @@ import ComposableArchitecture
 
 let categoryListReducer = Reducer<CategoryListState, CategoryListAction, CategoryListEnvironment> { state, action, env in
     switch action {
-    case .loadVenues:
-        return .none
-        
+  
     case .venuesLoaded(_):
         return .none
         
@@ -22,4 +20,8 @@ let categoryListReducer = Reducer<CategoryListState, CategoryListAction, Categor
         return .none
     }
 }
+.lifecycle(onDisappear:  { env in
+    //load venues here
+    return .none
+})
 

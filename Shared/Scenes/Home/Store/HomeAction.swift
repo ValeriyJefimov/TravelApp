@@ -40,10 +40,9 @@ enum HomeAction: Equatable {
     case photoAdded
     
     case startSearch
-    case search(SearchAction)
+    case search(LifecycleAction<SearchAction>)
     
     case showCategory(Category)
-    case category(CategoryListAction)
-    case dissmissCategory
+    case category(LifecycleAction<CategoryListAction>)
 }
 

@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		150302F126E8F003003EDC56 /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302F026E8F003003EDC56 /* Lifecycle.swift */; };
-		150302F226E8F003003EDC56 /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302F026E8F003003EDC56 /* Lifecycle.swift */; };
+		150302F426EB978F003EDC56 /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302F326EB978F003EDC56 /* Lifecycle.swift */; };
 		15050FFF26CA855000992A04 /* TravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F17526C534F5001D7B71 /* TravelApp.swift */; };
 		1505100026CA855300992A04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F18A26C6A7BE001D7B71 /* AppState.swift */; };
 		1505100126CA855600992A04 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F18C26C6A80C001D7B71 /* AppAction.swift */; };
@@ -143,7 +142,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		150302F026E8F003003EDC56 /* Lifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lifecycle.swift; path = ../../../Lifecycle.swift; sourceTree = "<group>"; };
+		150302F326EB978F003EDC56 /* Lifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lifecycle.swift; sourceTree = "<group>"; };
 		1505100A26CA887300992A04 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		1505100D26CA88E500992A04 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		1505101326CA894400992A04 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
@@ -479,7 +478,7 @@
 		15B1F18526C5604B001D7B71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				150302F026E8F003003EDC56 /* Lifecycle.swift */,
+				150302F326EB978F003EDC56 /* Lifecycle.swift */,
 				15B1F18626C5605F001D7B71 /* Error.swift */,
 				15B1F18826C5A617001D7B71 /* VoidResult.swift */,
 				15B1F1A126CA766A001D7B71 /* Colors.swift */,
@@ -797,13 +796,13 @@
 				15D3609E26E7704B00A3D044 /* CategoryListView.swift in Sources */,
 				15B1F19B26C6B761001D7B71 /* AuthEnvironment.swift in Sources */,
 				15B1F1A226CA766A001D7B71 /* Colors.swift in Sources */,
+				150302F426EB978F003EDC56 /* Lifecycle.swift in Sources */,
 				15D3608226E2246600A3D044 /* TransitionLink.swift in Sources */,
 				1536DF9A26DE5DE700A30E91 /* Live.swift in Sources */,
 				1505105026CE69DA00992A04 /* NetworkRepository.swift in Sources */,
 				1536DF9426DE5D3E00A30E91 /* LocationRepository.swift in Sources */,
 				1505105B26CE904C00992A04 /* Categories.swift in Sources */,
 				1536DF9726DE5D6100A30E91 /* Mock.swift in Sources */,
-				150302F126E8F003003EDC56 /* Lifecycle.swift in Sources */,
 				1536DF8726D6661600A30E91 /* Recomendations.swift in Sources */,
 				15B1F17626C534F5001D7B71 /* TravelApp.swift in Sources */,
 				15B1F18B26C6A7BE001D7B71 /* AppState.swift in Sources */,
@@ -864,7 +863,6 @@
 				1505104E26CD3C3200992A04 /* LoadableImage.swift in Sources */,
 				1505101026CA88EC00992A04 /* Colors.swift in Sources */,
 				1505100326CA855E00992A04 /* AppState+Reducer.swift in Sources */,
-				150302F226E8F003003EDC56 /* Lifecycle.swift in Sources */,
 				1536DF9B26DE5DE700A30E91 /* Live.swift in Sources */,
 				1505105F26CFDCD500992A04 /* Meta.swift in Sources */,
 				1536DF9526DE5D3E00A30E91 /* LocationRepository.swift in Sources */,

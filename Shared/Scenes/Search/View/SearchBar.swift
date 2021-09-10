@@ -11,6 +11,7 @@ struct SearchBar: View {
     
     @Binding var searchText: String
     var isFocused: Bool
+    var onCancel: (() -> Void)? = nil
     
     var body: some View {
         ZStack() {
@@ -24,10 +25,20 @@ struct SearchBar: View {
                     .scaledToFill()
                     .foregroundColor(.mainCyan)
                     .frame(width: 23, height: 23)
-                AutoFocusTextField(text: $searchText,
+                AutoFocusTextField(text: $searchText.animation(),
                                    placeholder: "Search For Places",
                                    isFocused: isFocused)
                     .accentColor(.mainCyan)
+                
+                if onCancel != nil && !searchText.isEmpty {
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.1)) { onCancel?() }
+                    } label: {
+                        Text("Back")
+                            .foregroundColor(.mainCyan)
+                    }
+                    .transition(.move(edge: .trailing).combined(with: .opacity))
+                }
             }
             .padding()
             

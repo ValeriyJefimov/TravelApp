@@ -13,6 +13,13 @@ let searchReducerCore = Reducer<SearchState, SearchAction, SearchEnvironment> { 
     case let .searchTextChanged(text):
         struct SearchLocationId: Hashable {}
         state.searchText = text
+        
+        let reducedText = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !reducedText.isEmpty else {
+            state.results = []
+            return .none
+        }
+        
         return .init(value: .requestLocation)
             .debounce(id: SearchLocationId(),
                       for: 0.5,
@@ -75,3 +82,4 @@ let searchReducer = Reducer<SearchState, SearchAction, SearchEnvironment>
         ),
         searchReducerCore
     )
+    .lifecycle()

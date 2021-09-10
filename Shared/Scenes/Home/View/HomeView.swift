@@ -59,55 +59,51 @@ struct HomeView: View {
                         withAnimation(.easeInOut(duration: 0.3)) { viewStore.send(.startSearch) }
                     }
                     
-//                    ScrollView(axes: .horizontal, showsIndicators: false) {
-//                        LazyHGrid(rows: [GridItem(.fixed(143))]) {
-//                            ForEach(viewStore.categories) { category in
-//                                CategoryView(title: category.shortName, url: category.url) {
-//                                    viewStore.send(.showCategory(category))
-//                                }
-//                            }
-//                        }
-//                        .padding(20)
-//                    }
-//                    .padding([.leading, .trailing], 15)
-//                    .padding(-20)
-//
-//                    ScrollView(axes: .horizontal, showsIndicators: false) {
-//                        LazyHGrid(rows: [GridItem(.fixed(246))]) {
-//                            ForEach(viewStore.recommendations) { rec in
-//                                RecommendationView(recommendation: rec)
-//                            }
-//                        }
-//                        .padding(20)
-//                    }
-//                    .padding([.leading, .trailing], 15)
-//                    .padding(-20)
-//
-//                    Spacer(minLength: 54)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: [GridItem(.fixed(143))]) {
+                            ForEach(viewStore.categories) { category in
+                                CategoryView(title: category.shortName, url: category.url) {
+                                    viewStore.send(.showCategory(category))
+                                }
+                            }
+                        }
+                        .padding(20)
+                    }
+                    .padding([.leading, .trailing], 15)
+                    .padding(-20)
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHGrid(rows: [GridItem(.fixed(246))]) {
+                            ForEach(viewStore.recommendations) { rec in
+                                RecommendationView(recommendation: rec)
+                            }
+                        }
+                        .padding(20)
+                    }
+                    .padding([.leading, .trailing], 15)
+                    .padding(-20)
+
+                    Spacer(minLength: 54)
                 }
-//                .modalLink(
-//                    isPresented: viewStore.binding(
-//                        get: { $0.categoryList != nil},
-//                        send: { $0 ? .showCategory(.mock) : .dissmissCategory }
-//                    ),
-//                    linkType: ModalTransition.fullScreenModal
-//                ) {
-//
-//                    IfLetStore(self.store.scope(
-//                        state: \.categoryList,
-//                        action: HomeAction.category
-//                    )) { detailStore in
-//                        CategoryListView(store: detailStore)
-//                    }
-//                }
+                .modalLink(
+                    isPresented: .constant(viewStore.categoryList != nil),
+                    linkType: ModalTransition.fullScreenModal
+                ) {
+
+                    IfLetStore(self.store.scope(
+                        state: \.categoryList,
+                        action: HomeAction.category
+                    )) { CategoryListView(store: $0) }
+                }
                 .modalLink(
                     isPresented: .constant(viewStore.searchState != nil),
                     linkType: ModalTransition.cover(offset: 140)
                 ) {
-                    IfLetStore(
-                        self.store.scope(state: \.searchState, action: HomeAction.search),
-                        then: SearchView.init(store:)
-                    )
+                    
+                    IfLetStore(self.store.scope(
+                        state: \.searchState,
+                        action: HomeAction.search
+                    )) { SearchView(store: $0) }
                 }
                 .scrollOnOverflow()
                 .actionSheet(self.store.scope(state: \.optionSheet), dismiss: .dissmissOptionSheet)
