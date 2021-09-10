@@ -9,24 +9,22 @@ import SwiftUI
 
 struct AuthHeader: View {
         
+    //MARK: - Public
     @Binding var state: AuthSceneViewModel.State
     
     var body: some View {
         GeometryReader { metrics in
-            let cardSize = CGSize(width: (metrics.size.width) / 2 + AuthSceneConstants.hPadding,
+            let cardSize = CGSize(width: (metrics.size.width) / 2,
                                   height: metrics.size.height)
             let cardVOffset: CGFloat = {
-                var multiplier: CGFloat = 0
                 switch state {
                 case .initial:
-                    multiplier = 1
+                    return -(cardSize.width) - AuthSceneConstants.hPadding / 2
                 case .signUp:
-                    break
+                    return -AuthSceneConstants.hPadding / 4
                 case .signIn:
-                    multiplier = 2
-                    
+                    return -(cardSize.width * 2) - AuthSceneConstants.hPadding / 2
                 }
-                return -(cardSize.width * multiplier) - AuthSceneConstants.hPadding / 2
             }()
             
             HStack {
@@ -49,7 +47,6 @@ struct AuthHeader: View {
                 }
                 .modifier(HeaderSize(size: cardSize, vOffset: cardVOffset))
                 .padding(.bottom, 40)
-                
             }
         }
     }
@@ -72,7 +69,7 @@ extension AuthHeader {
     
     struct AuthSceneHeaderTitle: ViewModifier {
         
-        private let font = Font.system(size: 50).weight(.thin)
+        private let font = Font.system(size: 50).weight(.light)
         
         func body(content: Content) -> some View {
             content
@@ -81,6 +78,7 @@ extension AuthHeader {
                 .lineLimit(1)
                 .font(font)
                 .padding()
+                .minimumScaleFactor(0.4)
         }
     }
     
@@ -89,7 +87,8 @@ extension AuthHeader {
         
         var body: some View {
             Button(action: {
-                withAnimation(.easeInOut(duration: 0.5)) {
+                hideKeyboard()
+                withAnimation(.easeInOut(duration: AuthSceneConstants.animationDuration)) {
                     state = .initial
                 }
             }, label: {

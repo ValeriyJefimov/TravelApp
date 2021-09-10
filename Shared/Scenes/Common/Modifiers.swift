@@ -19,4 +19,3 @@ struct Card: ViewModifier {
                     radius: 14, x: 0, y: 7)
     }
 }
-

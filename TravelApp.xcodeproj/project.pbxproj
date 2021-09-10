@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,16 @@
 		154205BC26B4A99600EBB424 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154205B626B4853F00EBB424 /* SignUpView.swift */; };
 		154205BD26B4A99D00EBB424 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154205B226B484F200EBB424 /* Modifiers.swift */; };
 		154205BF26B4AB4500EBB424 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154205BE26B4AB4500EBB424 /* FloatingTextField.swift */; };
+		154205C626B7CC5900EBB424 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154205C526B7CC5900EBB424 /* Keyboard.swift */; };
+		15ABCBBE26B81EDD00843BB5 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABCBBD26B81EDD00843BB5 /* AuthRepository.swift */; };
+		15ABCBC226B81F3100843BB5 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 15ABCBC126B81F3100843BB5 /* KeychainAccess */; };
+		15ABCBC426B81F4C00843BB5 /* KeychainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABCBC326B81F4C00843BB5 /* KeychainRepository.swift */; };
+		15ABCBC626B84C1200843BB5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABCBC526B84C1200843BB5 /* Errors.swift */; };
+		15ABCBC826BD3CC000843BB5 /* AlertExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABCBC726BD3CC000843BB5 /* AlertExtensions.swift */; };
+		15ABCBC926BD3CC000843BB5 /* AlertExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ABCBC726BD3CC000843BB5 /* AlertExtensions.swift */; };
+		15B1F11F26C530C1001D7B71 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 15B1F11E26C530C1001D7B71 /* ComposableArchitecture */; };
+		15B1F12126C530C9001D7B71 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 15B1F12026C530C9001D7B71 /* KeychainAccess */; };
+		15B1F12326C530CD001D7B71 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 15B1F12226C530CD001D7B71 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +56,19 @@
 			remoteInfo = "TravelApp (macOS)";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		15ABCBE926C3ED0300843BB5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1542056526B42FBD00EBB424 /* TravelAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppApp.swift; sourceTree = "<group>"; };
@@ -69,6 +92,16 @@
 		154205B626B4853F00EBB424 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		154205B826B4858F00EBB424 /* AuthSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSceneViewModel.swift; sourceTree = "<group>"; };
 		154205BE26B4AB4500EBB424 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		154205C526B7CC5900EBB424 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		15ABCBBD26B81EDD00843BB5 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		15ABCBC326B81F4C00843BB5 /* KeychainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainRepository.swift; sourceTree = "<group>"; };
+		15ABCBC526B84C1200843BB5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		15ABCBC726BD3CC000843BB5 /* AlertExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtensions.swift; sourceTree = "<group>"; };
+		15ABCBD126C3ED0300843BB5 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		15ABCBD226C3ED0300843BB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15ABCBDE26C3ED0300843BB5 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		15ABCBE026C3ED0300843BB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15ABCBF026C3EDE200843BB5 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B1F11F26C530C1001D7B71 /* ComposableArchitecture in Frameworks */,
+				15ABCBC226B81F3100843BB5 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B1F12326C530CD001D7B71 /* ComposableArchitecture in Frameworks */,
+				15B1F12126C530C9001D7B71 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +148,10 @@
 				1542057526B42FBE00EBB424 /* macOS */,
 				1542057F26B42FBE00EBB424 /* Tests iOS */,
 				1542058A26B42FBE00EBB424 /* Tests macOS */,
+				15ABCBD026C3ED0300843BB5 /* Core */,
+				15ABCBDD26C3ED0300843BB5 /* CoreTests */,
 				1542056D26B42FBE00EBB424 /* Products */,
+				15B1F11D26C530C1001D7B71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,7 +233,9 @@
 		154205A426B4301800EBB424 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				15ABCBBF26B81EF800843BB5 /* Keychain */,
 				154205AA26B431D300EBB424 /* Colors.swift */,
+				15ABCBC726BD3CC000843BB5 /* AlertExtensions.swift */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -201,6 +243,8 @@
 		154205A526B4302A00EBB424 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				15ABCBBC26B81EBE00843BB5 /* Repositories */,
+				15ABCBC526B84C1200843BB5 /* Errors.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -222,8 +266,51 @@
 			children = (
 				154205B226B484F200EBB424 /* Modifiers.swift */,
 				154205BE26B4AB4500EBB424 /* FloatingTextField.swift */,
+				154205C526B7CC5900EBB424 /* Keyboard.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		15ABCBBC26B81EBE00843BB5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				15ABCBBD26B81EDD00843BB5 /* AuthRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		15ABCBBF26B81EF800843BB5 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				15ABCBC326B81F4C00843BB5 /* KeychainRepository.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		15ABCBD026C3ED0300843BB5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				15ABCBD126C3ED0300843BB5 /* Core.h */,
+				15ABCBD226C3ED0300843BB5 /* Info.plist */,
+				15ABCBF026C3EDE200843BB5 /* Core.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		15ABCBDD26C3ED0300843BB5 /* CoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				15ABCBDE26C3ED0300843BB5 /* CoreTests.swift */,
+				15ABCBE026C3ED0300843BB5 /* Info.plist */,
+			);
+			path = CoreTests;
+			sourceTree = "<group>";
+		};
+		15B1F11D26C530C1001D7B71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,12 +323,17 @@
 				1542056826B42FBE00EBB424 /* Sources */,
 				1542056926B42FBE00EBB424 /* Frameworks */,
 				1542056A26B42FBE00EBB424 /* Resources */,
+				15ABCBE926C3ED0300843BB5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "TravelApp (iOS)";
+			packageProductDependencies = (
+				15ABCBC126B81F3100843BB5 /* KeychainAccess */,
+				15B1F11E26C530C1001D7B71 /* ComposableArchitecture */,
+			);
 			productName = "TravelApp (iOS)";
 			productReference = 1542056C26B42FBE00EBB424 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +351,10 @@
 			dependencies = (
 			);
 			name = "TravelApp (macOS)";
+			packageProductDependencies = (
+				15B1F12026C530C9001D7B71 /* KeychainAccess */,
+				15B1F12226C530CD001D7B71 /* ComposableArchitecture */,
+			);
 			productName = "TravelApp (macOS)";
 			productReference = 1542057426B42FBE00EBB424 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +429,10 @@
 				Base,
 			);
 			mainGroup = 1542055F26B42FBC00EBB424;
+			packageReferences = (
+				15ABCBC026B81F3100843BB5 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				15ABCBED26C3ED7800843BB5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 1542056D26B42FBE00EBB424 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -384,10 +484,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				154205B526B4852900EBB424 /* SignInView.swift in Sources */,
+				15ABCBBE26B81EDD00843BB5 /* AuthRepository.swift in Sources */,
+				15ABCBC826BD3CC000843BB5 /* AlertExtensions.swift in Sources */,
 				154205A826B4306700EBB424 /* AuthScene.swift in Sources */,
 				154205AF26B4830600EBB424 /* AuthHeader.swift in Sources */,
 				154205B726B4853F00EBB424 /* SignUpView.swift in Sources */,
+				154205C626B7CC5900EBB424 /* Keyboard.swift in Sources */,
 				154205BF26B4AB4500EBB424 /* FloatingTextField.swift in Sources */,
+				15ABCBC626B84C1200843BB5 /* Errors.swift in Sources */,
+				15ABCBC426B81F4C00843BB5 /* KeychainRepository.swift in Sources */,
 				154205B326B484F200EBB424 /* Modifiers.swift in Sources */,
 				154205AB26B431D300EBB424 /* Colors.swift in Sources */,
 				1542058E26B42FBE00EBB424 /* TravelAppApp.swift in Sources */,
@@ -401,6 +506,7 @@
 			files = (
 				154205BB26B4A99300EBB424 /* SignInView.swift in Sources */,
 				154205AC26B47D0F00EBB424 /* AuthScene.swift in Sources */,
+				15ABCBC926BD3CC000843BB5 /* AlertExtensions.swift in Sources */,
 				154205B026B4830C00EBB424 /* AuthHeader.swift in Sources */,
 				154205BC26B4A99600EBB424 /* SignUpView.swift in Sources */,
 				154205BD26B4A99D00EBB424 /* Modifiers.swift in Sources */,
@@ -556,6 +662,7 @@
 		1542059726B42FBE00EBB424 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +685,7 @@
 		1542059826B42FBE00EBB424 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -784,6 +892,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15ABCBC026B81F3100843BB5 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+		15ABCBED26C3ED7800843BB5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15ABCBC126B81F3100843BB5 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15ABCBC026B81F3100843BB5 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		15B1F11E26C530C1001D7B71 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15ABCBED26C3ED7800843BB5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		15B1F12026C530C9001D7B71 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15ABCBC026B81F3100843BB5 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		15B1F12226C530CD001D7B71 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15ABCBED26C3ED7800843BB5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1542056026B42FBC00EBB424 /* Project object */;
 }
