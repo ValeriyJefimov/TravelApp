@@ -6,13 +6,14 @@
 //
 
 import Alamofire
-import CoreLocation.CLLocation
+import ComposableCoreLocation
 
 struct SearchRequest: NetworkRequest {
     let query: String?
     let categoryId: String?
+    let radius: Double
     
-    let location: CLLocation
+    let location: Location
 
     let token: Token = liveToken
     let method: HTTPMethod = .get
@@ -23,7 +24,7 @@ struct SearchRequest: NetworkRequest {
     var params: Parameters? {
         var specParams: Parameters = [
             "ll" : "\(location.coordinate.latitude),\(location.coordinate.longitude)",
-            "radius" : 1000,
+            "radius" : radius,
         ]
         
         if let query = query {
@@ -35,16 +36,25 @@ struct SearchRequest: NetworkRequest {
         return baseParametrs.merging(specParams, uniquingKeysWith: { f, _ in return f })
     }
     
-    init(query: String, location: CLLocation) {
+    init(query: String, location: Location) {
         self.query = query
         self.location = location
         self.categoryId = nil
+        self.radius = 1000
     }
     
-    init(categoryId: String, location: CLLocation) {
+    init(categoryId: String, location: Location) {
         self.query = nil
         self.location = location
         self.categoryId = categoryId
+        self.radius = 1000
+    }
+    
+    init(region: MapRegion) {
+        self.query = nil
+        self.location = region.location
+        self.categoryId = nil
+        self.radius = region.radius
     }
 }
 

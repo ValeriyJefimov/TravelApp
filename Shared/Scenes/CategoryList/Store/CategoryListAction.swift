@@ -8,7 +8,8 @@
 import ComposableArchitecture
 
 enum CategoryListAction: Equatable {
-    case venuesLoaded(Result<SearchResult, NetworkError>)
+    case loadCategories
+    case categoriesLoaded(Result<SearchResult, NetworkError>)
     
     case presentAlert(String)
     

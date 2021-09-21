@@ -12,6 +12,7 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
     switch action {
         
     case let .downloadRecommendations(location):
+        return .none
         return env.networkRepo
             .run(RecommendationsRequest(location: location))
             .catchToEffect()
@@ -45,23 +46,13 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         state.isDataFetching = false
         return .none
         
+    //MARK: - Location
     case .requestLocationPermission:
         switch env.locationRepo.authorizationStatus() {
         case .notDetermined:
-            env.locationRepo.requestWhenInUseAuthorization()
             return env.locationRepo
-                .delegate
-                .compactMap { event -> HomeAction? in
-                    switch event {
-                    case let .didChangeAuthorization(status):
-                        return .requestLocationPermissionResult(.success(status))
-                    case .didUpdateLocations:
-                        return nil
-                    case .didFailWithError:
-                        return .requestLocationPermissionResult(.failure(.notAuthorized))
-                    }
-                }
-                .eraseToEffect()
+                .requestLocation(id: LocationManagerId())
+                .fireAndForget()
         case .restricted, .denied:
             return .init(value: .presentAlert(LocationError.notAuthorized.localizedDescription))
         case .authorizedAlways, .authorizedWhenInUse:
@@ -70,37 +61,27 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
             return .none
         }
         
-    case let .requestLocationPermissionResult(.success(status)):
-        switch status {
-        case .notDetermined, .restricted, .denied:
-            return .init(value: .presentAlert(LocationError.notAuthorized.localizedDescription))
-        case .authorizedAlways, .authorizedWhenInUse:
-            return .init(value: .requestLocation)
-        @unknown default:
+    case .requestLocation:
+        return env.locationRepo
+            .requestLocation(id: LocationManagerId())
+            .fireAndForget()
+        
+    case .locationManager(.didChangeAuthorization(.authorizedWhenInUse)):
+        return .init(value: .requestLocation)
+        
+    case .locationManager(.didChangeAuthorization(.denied)),
+         .locationManager(.didChangeAuthorization(.restricted)):
+        return .init(value: .presentAlert(LocationError.notAuthorized.localizedDescription))
+        
+    case let .locationManager(.didUpdateLocations(locations)):
+        guard let location = locations.first else {
             return .none
         }
+        state.currentLocation = .init(location)
+        return .init(value: .downloadRecommendations(locations.first!))
         
-    case let .requestLocationResult(.failure(error)), let.requestLocationPermissionResult(.failure(error)):
-        return .init(value: .presentAlert(error.localizedDescription))
-        
-    case .requestLocation:
-        env.locationRepo.requestLocation()
-        return env.locationRepo
-            .delegate
-            .compactMap { event -> HomeAction? in
-                switch event {
-                case let .didChangeAuthorization(status):
-                    return nil
-                case let .didUpdateLocations(locations):
-                    return .requestLocationResult(.success(locations.first!))
-                case .didFailWithError:
-                    return .requestLocationResult(.failure(.notAuthorized))
-                }
-            }
-            .eraseToEffect()
-        
-    case let .requestLocationResult(.success(location)):
-        return .init(value: .downloadRecommendations(location))
+    case .locationManager:
+        return .none
         
     case let .presentAlert(error):
         return .none
@@ -189,7 +170,8 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         return .none
         
     case let .showCategory(category):
-        state.categoryList = CategoryListState(category: category)
+        guard let location = state.currentLocation else { return .none }
+        state.categoryList = CategoryListState(category: category, location: location)
         return .none
         
     case .category(.action(.dissmiss)):
@@ -200,7 +182,6 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         return .none
     }
 }
-.debugActions()
 
 let homeReducer = Reducer
     .combine(

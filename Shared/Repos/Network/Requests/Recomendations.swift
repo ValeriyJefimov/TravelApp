@@ -6,10 +6,10 @@
 //
 
 import Alamofire
-import CoreLocation
+import ComposableCoreLocation
 
 struct RecommendationsRequest: NetworkRequest {
-    let location: CLLocation
+    let location: Location
     let token: Token = liveToken
     let method: HTTPMethod = .get
     let headers: HTTPHeaders? = nil

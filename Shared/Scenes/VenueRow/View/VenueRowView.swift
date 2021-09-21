@@ -29,7 +29,7 @@ struct VenueRowView: View {
                     }
                     Spacer()
                     HStack {
-                        Text(distanceString(for: viewStore.location?.distance ?? 0))
+                        Text(distanceString(for: viewStore.location.distance))
                             .bold()
                             .foregroundColor(.mainCyan)
                         
@@ -41,6 +41,9 @@ struct VenueRowView: View {
                     }
                 }
                 .padding()
+            }
+            .onTapGesture {
+                viewStore.send(.didSelect(viewStore.state))
             }
         }
     }

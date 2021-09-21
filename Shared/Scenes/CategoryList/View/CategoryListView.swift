@@ -16,7 +16,7 @@ struct CategoryListView: View {
             VStack(alignment: .leading) {
                 HStack {
                     Button(
-                        action: { viewStore.send(.action(.dissmiss)) },
+                        action: { viewStore.send(.action(.dissmiss), animation: .easeInOut) },
                         label: {
                             Image(systemName: "arrow.left")
                                 .frame(width: 55, height: 55)
@@ -29,19 +29,26 @@ struct CategoryListView: View {
                         .font(.title)
                         .bold()
                 }
-                LazyVStack {
-                    ForEachStore(
-                        self.store.scope(
-                            state: \.venues,
-                            action: {
-                                .action(CategoryListAction.venueRow(id: $0.0, action: $0.1))
-                            })
-                    ) { rowStore in
-                        VenueRowView(store: rowStore)
+                .padding([.leading, .trailing], 15)
+                ScrollView {
+                    LazyVStack {
+                        ForEachStore(
+                            self.store.scope(
+                                state: \.venues,
+                                action: {
+                                    .action(CategoryListAction.venueRow(id: $0.0, action: $0.1))
+                                })
+                        ) { rowStore in
+                            VenueRowView(store: rowStore)
+                        }
+                        Section(header: Color.clear.frame(height: 110)) { EmptyView() }
                     }
+                    .padding([.top, .leading, .trailing], 15)
                 }
             }
-            .padding([.leading, .trailing], 15)
+            .onAppear {
+                viewStore.send(.action(.loadCategories))
+            }
         }
     }
 }

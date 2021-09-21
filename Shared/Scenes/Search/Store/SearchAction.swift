@@ -6,7 +6,7 @@
 //
 
 import ComposableArchitecture
-import CoreLocation
+import ComposableCoreLocation
 
 enum SearchAction: Equatable {
     case searchTextChanged(String)
@@ -16,7 +16,7 @@ enum SearchAction: Equatable {
     case resultsLoaded(Result<SearchResult, NetworkError>)
     
     case requestLocation
-    case requestLocationResult(Result<CLLocation, LocationError>)
+    case locationManager(LocationManager.Action)
     
     case presentAlert(String)
     

@@ -1,21 +1,21 @@
 //
-//  SearchEnvironment.swift
+//  MapEnvironment.swift
 //  TravelApp (iOS)
 //
-//  Created by Valeriy Jefimov on 9/2/21.
+//  Created by Valeriy Jefimov on 9/14/21.
 //
 
 import Foundation
-import ComposableCoreLocation
 import ComposableArchitecture
+import ComposableCoreLocation
 
-struct SearchEnvironment {
+struct MapEnvironment {
     let networkRepo: NetworkRepository
-    let locationRepo: LocationManager
+    var locationRepo: LocationManager
     var mainQueue: AnySchedulerOf<DispatchQueue>
 }
 
-extension SearchEnvironment {
+extension MapEnvironment {
     static let mock = SearchEnvironment(networkRepo: .live,
                                         locationRepo: .notDetermined,
                                         mainQueue: .main)

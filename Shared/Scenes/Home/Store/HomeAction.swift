@@ -6,7 +6,7 @@
 //
 
 import ComposableArchitecture
-import CoreLocation
+import ComposableCoreLocation
 import UIKit.UIImage
 
 enum HomeAction: Equatable {
@@ -15,12 +15,10 @@ enum HomeAction: Equatable {
     case downloadCategoriesResult(Result<CategoriesResult, NetworkError>)
     
     case requestLocationPermission
-    case requestLocationPermissionResult(Result<CLAuthorizationStatus, LocationError>)
-    
     case requestLocation
-    case requestLocationResult(Result<CLLocation, LocationError>)
+    case locationManager(LocationManager.Action)
     
-    case downloadRecommendations(CLLocation)
+    case downloadRecommendations(Location)
     case downloadRecommendationsResult(Result<RecommendationsResult, NetworkError>)
     
     case downloadVenueResult(Result<[Venue], NetworkError>)

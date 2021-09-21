@@ -63,7 +63,7 @@ struct HomeView: View {
                         LazyHGrid(rows: [GridItem(.fixed(143))]) {
                             ForEach(viewStore.categories) { category in
                                 CategoryView(title: category.shortName, url: category.url) {
-                                    viewStore.send(.showCategory(category))
+                                    viewStore.send(.showCategory(category), animation: .easeInOut)
                                 }
                             }
                         }
@@ -115,7 +115,7 @@ struct HomeView: View {
                 }
                 .onAppear {
                     viewStore.send(.downloadCategories)
-                    // viewStore.send(.requestLocationPermission)
+                    viewStore.send(.requestLocationPermission)
                 }
                 
                 if viewStore.isDataFetching { FullscreenProgressView() }

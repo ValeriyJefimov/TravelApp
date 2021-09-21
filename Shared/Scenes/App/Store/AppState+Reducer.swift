@@ -76,6 +76,10 @@ extension AppState {
         case .userFetched(.failure), .userLogouted:
             state.isUserLogged = false
             return .none
+            
+        //MARK: - Map
+        case .map:
+            return .none
         }
     }
 }
@@ -85,6 +89,14 @@ extension AppState {
     static let reducer = Reducer<AppState, AppAction, AppEnvironment>
         .combine(
             AppState.reducerCore,
+            mapReducer
+                .pullback(state: \.mapState,
+                          action: /AppAction.map,
+                          environment: { MapEnvironment.init(
+                            networkRepo: $0.networkRepo,
+                            locationRepo: $0.locationRepo,
+                            mainQueue: .main)
+                          }),
             authReducer
                 .optional()
                 .pullback(

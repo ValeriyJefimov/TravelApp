@@ -9,6 +9,7 @@ import ComposableArchitecture
 
 let venueRowReducer = Reducer<Venue, VenueRowAction, VenueRowEnvironment> { todo, action, _ in
   switch action {
- 
+  case .didSelect:
+    return .none
   }
 }

@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		150302F426EB978F003EDC56 /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302F326EB978F003EDC56 /* Lifecycle.swift */; };
+		150302F926F0ED99003EDC56 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302F826F0ED99003EDC56 /* MapState.swift */; };
+		150302FB26F0EDA2003EDC56 /* MapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302FA26F0EDA2003EDC56 /* MapAction.swift */; };
+		150302FD26F0EDB0003EDC56 /* Map+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302FC26F0EDB0003EDC56 /* Map+Reducer.swift */; };
+		150302FF26F0EDC1003EDC56 /* MapEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302FE26F0EDC1003EDC56 /* MapEnvironment.swift */; };
+		1503030026F0EDC8003EDC56 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302F826F0ED99003EDC56 /* MapState.swift */; };
+		1503030126F0EDCA003EDC56 /* MapAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302FA26F0EDA2003EDC56 /* MapAction.swift */; };
+		1503030226F0EDCD003EDC56 /* Map+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302FC26F0EDB0003EDC56 /* Map+Reducer.swift */; };
+		1503030326F0EDD0003EDC56 /* MapEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150302FE26F0EDC1003EDC56 /* MapEnvironment.swift */; };
+		1503030526F0EDF6003EDC56 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1503030426F0EDF6003EDC56 /* MapView.swift */; };
+		1503030726F1FF69003EDC56 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1503030626F1FF69003EDC56 /* Coordinates.swift */; };
 		15050FFF26CA855000992A04 /* TravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F17526C534F5001D7B71 /* TravelApp.swift */; };
 		1505100026CA855300992A04 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F18A26C6A7BE001D7B71 /* AppState.swift */; };
 		1505100126CA855600992A04 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F18C26C6A80C001D7B71 /* AppAction.swift */; };
@@ -66,6 +76,7 @@
 		1505105C26CE904C00992A04 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505105A26CE904C00992A04 /* Categories.swift */; };
 		1505105E26CFDCD500992A04 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505105D26CFDCD500992A04 /* Meta.swift */; };
 		1505105F26CFDCD500992A04 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1505105D26CFDCD500992A04 /* Meta.swift */; };
+		1519080726FA43C7002E648E /* ComposableCoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 1519080626FA43C7002E648E /* ComposableCoreLocation */; };
 		1536DF3926D3ACE600A30E91 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1536DF3826D3ACE600A30E91 /* Alamofire */; };
 		1536DF3A26D3ACFC00A30E91 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F18326C5600A001D7B71 /* AuthRepository.swift */; };
 		1536DF3B26D3AD1000A30E91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F17F26C550FB001D7B71 /* User.swift */; };
@@ -76,12 +87,8 @@
 		1536DF8B26D6809700A30E91 /* VenueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF8926D6809700A30E91 /* VenueDetails.swift */; };
 		1536DF8D26D6968400A30E91 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF8C26D6968400A30E91 /* Venue.swift */; };
 		1536DF8E26D6968400A30E91 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF8C26D6968400A30E91 /* Venue.swift */; };
-		1536DF9426DE5D3E00A30E91 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF9326DE5D3E00A30E91 /* LocationRepository.swift */; };
-		1536DF9526DE5D3E00A30E91 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF9326DE5D3E00A30E91 /* LocationRepository.swift */; };
 		1536DF9726DE5D6100A30E91 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF9626DE5D6100A30E91 /* Mock.swift */; };
 		1536DF9826DE5D6100A30E91 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF9626DE5D6100A30E91 /* Mock.swift */; };
-		1536DF9A26DE5DE700A30E91 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF9926DE5DE700A30E91 /* Live.swift */; };
-		1536DF9B26DE5DE700A30E91 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1536DF9926DE5DE700A30E91 /* Live.swift */; };
 		1536DF9E26DF8BB100A30E91 /* ImagePickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 1536DF9D26DF8BB100A30E91 /* ImagePickerView */; };
 		15B1F14626C53115001D7B71 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F14526C53115001D7B71 /* Tests_iOS.swift */; };
 		15B1F15126C53115001D7B71 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1F15026C53115001D7B71 /* Tests_macOS.swift */; };
@@ -143,6 +150,12 @@
 
 /* Begin PBXFileReference section */
 		150302F326EB978F003EDC56 /* Lifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lifecycle.swift; sourceTree = "<group>"; };
+		150302F826F0ED99003EDC56 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
+		150302FA26F0EDA2003EDC56 /* MapAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAction.swift; sourceTree = "<group>"; };
+		150302FC26F0EDB0003EDC56 /* Map+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map+Reducer.swift"; sourceTree = "<group>"; };
+		150302FE26F0EDC1003EDC56 /* MapEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEnvironment.swift; sourceTree = "<group>"; };
+		1503030426F0EDF6003EDC56 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1503030626F1FF69003EDC56 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		1505100A26CA887300992A04 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		1505100D26CA88E500992A04 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		1505101326CA894400992A04 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
@@ -168,9 +181,7 @@
 		1536DF8626D6661500A30E91 /* Recomendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recomendations.swift; sourceTree = "<group>"; };
 		1536DF8926D6809700A30E91 /* VenueDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetails.swift; sourceTree = "<group>"; };
 		1536DF8C26D6968400A30E91 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
-		1536DF9326DE5D3E00A30E91 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
 		1536DF9626DE5D6100A30E91 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
-		1536DF9926DE5DE700A30E91 /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
 		15B1F12C26C53115001D7B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15B1F13126C53115001D7B71 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15B1F13426C53115001D7B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1536DF9E26DF8BB100A30E91 /* ImagePickerView in Frameworks */,
+				1519080726FA43C7002E648E /* ComposableCoreLocation in Frameworks */,
 				15B1F16E26C53253001D7B71 /* ComposableArchitecture in Frameworks */,
 				1505105426CE6D8C00992A04 /* Alamofire in Frameworks */,
 			);
@@ -255,6 +267,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150302F526F0ED6F003EDC56 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				150302F726F0ED8B003EDC56 /* View */,
+				150302F626F0ED7F003EDC56 /* Store */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		150302F626F0ED7F003EDC56 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				150302F826F0ED99003EDC56 /* MapState.swift */,
+				150302FA26F0EDA2003EDC56 /* MapAction.swift */,
+				150302FE26F0EDC1003EDC56 /* MapEnvironment.swift */,
+				150302FC26F0EDB0003EDC56 /* Map+Reducer.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		150302F726F0ED8B003EDC56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1503030426F0EDF6003EDC56 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1505101C26CBDADD00992A04 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,9 +375,7 @@
 		1536DF9226DE5D2100A30E91 /* LocationRepository */ = {
 			isa = PBXGroup;
 			children = (
-				1536DF9326DE5D3E00A30E91 /* LocationRepository.swift */,
 				1536DF9626DE5D6100A30E91 /* Mock.swift */,
-				1536DF9926DE5DE700A30E91 /* Live.swift */,
 			);
 			path = LocationRepository;
 			sourceTree = "<group>";
@@ -447,6 +485,7 @@
 				1505103A26CD1B5400992A04 /* Recomendation.swift */,
 				1505105D26CFDCD500992A04 /* Meta.swift */,
 				1536DF8C26D6968400A30E91 /* Venue.swift */,
+				1503030626F1FF69003EDC56 /* Coordinates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,6 +493,7 @@
 		15B1F18126C55FE4001D7B71 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				150302F526F0ED6F003EDC56 /* Map */,
 				15B1F17226C53279001D7B71 /* App */,
 				15B1F16926C531F2001D7B71 /* Auth */,
 				15D3609126E7594400A3D044 /* CategoryList */,
@@ -635,6 +675,7 @@
 				15B1F16D26C53253001D7B71 /* ComposableArchitecture */,
 				1505105326CE6D8C00992A04 /* Alamofire */,
 				1536DF9D26DF8BB100A30E91 /* ImagePickerView */,
+				1519080626FA43C7002E648E /* ComposableCoreLocation */,
 			);
 			productName = "TravelApp (iOS)";
 			productReference = 15B1F13126C53115001D7B71 /* TravelApp.app */;
@@ -735,6 +776,7 @@
 				15B1F16C26C53253001D7B71 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				1505105226CE6D8C00992A04 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1536DF9C26DF8BB100A30E91 /* XCRemoteSwiftPackageReference "ImagePickerView" */,
+				1519080526FA43C7002E648E /* XCRemoteSwiftPackageReference "composable-core-location" */,
 			);
 			productRefGroup = 15B1F13226C53115001D7B71 /* Products */;
 			projectDirPath = "";
@@ -790,6 +832,7 @@
 				1505100B26CA887300992A04 /* SignInView.swift in Sources */,
 				15B1F18726C5605F001D7B71 /* Error.swift in Sources */,
 				1505104726CD1C2B00992A04 /* LadableImageEnvironment.swift in Sources */,
+				150302FD26F0EDB0003EDC56 /* Map+Reducer.swift in Sources */,
 				15B1F19926C6B756001D7B71 /* AuthAction.swift in Sources */,
 				15D3609826E7701100A3D044 /* CategoryListAction.swift in Sources */,
 				1505101426CA894400992A04 /* FloatingTextField.swift in Sources */,
@@ -798,9 +841,7 @@
 				15B1F1A226CA766A001D7B71 /* Colors.swift in Sources */,
 				150302F426EB978F003EDC56 /* Lifecycle.swift in Sources */,
 				15D3608226E2246600A3D044 /* TransitionLink.swift in Sources */,
-				1536DF9A26DE5DE700A30E91 /* Live.swift in Sources */,
 				1505105026CE69DA00992A04 /* NetworkRepository.swift in Sources */,
-				1536DF9426DE5D3E00A30E91 /* LocationRepository.swift in Sources */,
 				1505105B26CE904C00992A04 /* Categories.swift in Sources */,
 				1536DF9726DE5D6100A30E91 /* Mock.swift in Sources */,
 				1536DF8726D6661600A30E91 /* Recomendations.swift in Sources */,
@@ -813,6 +854,7 @@
 				1505102326CBDB2000992A04 /* HomeAction.swift in Sources */,
 				15D3607626E13F3400A3D044 /* SearchAction.swift in Sources */,
 				15B1F18F26C6A832001D7B71 /* AppState+Reducer.swift in Sources */,
+				150302F926F0ED99003EDC56 /* MapState.swift in Sources */,
 				1505104126CD1C1000992A04 /* LadableImageState.swift in Sources */,
 				15D3609626E7700600A3D044 /* CategoryListState.swift in Sources */,
 				1536DF8A26D6809700A30E91 /* VenueDetails.swift in Sources */,
@@ -823,6 +865,7 @@
 				15B1F18D26C6A80C001D7B71 /* AppAction.swift in Sources */,
 				1505104A26CD1C4300992A04 /* LadableImage+Reducer.swift in Sources */,
 				1505105E26CFDCD500992A04 /* Meta.swift in Sources */,
+				150302FB26F0EDA2003EDC56 /* MapAction.swift in Sources */,
 				15D3608E26E69AC200A3D044 /* VenueRow+Reducer.swift in Sources */,
 				15B1F18026C550FB001D7B71 /* User.swift in Sources */,
 				1505101A26CA945500992A04 /* Keyboard.swift in Sources */,
@@ -838,10 +881,13 @@
 				15D3608A26E69AA600A3D044 /* VenueRowAction.swift in Sources */,
 				15D3608026E147B800A3D044 /* SearchView.swift in Sources */,
 				1505104426CD1C2000992A04 /* LadableImageAction.swift in Sources */,
+				1503030726F1FF69003EDC56 /* Coordinates.swift in Sources */,
 				15B1F18926C5A617001D7B71 /* VoidResult.swift in Sources */,
+				150302FF26F0EDC1003EDC56 /* MapEnvironment.swift in Sources */,
 				1505104D26CD3C3200992A04 /* LoadableImage.swift in Sources */,
 				15B1F18426C5600A001D7B71 /* AuthRepository.swift in Sources */,
 				1505103826CBEF4F00992A04 /* Category.swift in Sources */,
+				1503030526F0EDF6003EDC56 /* MapView.swift in Sources */,
 				15B1F19726C6B74D001D7B71 /* AuthState.swift in Sources */,
 				15D3607826E13F4000A3D044 /* SearchEnvironment.swift in Sources */,
 				15D3609C26E7703C00A3D044 /* CategoryList+Reducer.swift in Sources */,
@@ -857,15 +903,15 @@
 			files = (
 				1505101226CA88F200992A04 /* Error.swift in Sources */,
 				15050FFF26CA855000992A04 /* TravelApp.swift in Sources */,
+				1503030326F0EDD0003EDC56 /* MapEnvironment.swift in Sources */,
 				1505100726CA856D00992A04 /* AuthAction.swift in Sources */,
 				1505101126CA88EF00992A04 /* VoidResult.swift in Sources */,
 				1505100926CA857300992A04 /* AuthState+Reducer.swift in Sources */,
 				1505104E26CD3C3200992A04 /* LoadableImage.swift in Sources */,
 				1505101026CA88EC00992A04 /* Colors.swift in Sources */,
 				1505100326CA855E00992A04 /* AppState+Reducer.swift in Sources */,
-				1536DF9B26DE5DE700A30E91 /* Live.swift in Sources */,
+				1503030026F0EDC8003EDC56 /* MapState.swift in Sources */,
 				1505105F26CFDCD500992A04 /* Meta.swift in Sources */,
-				1536DF9526DE5D3E00A30E91 /* LocationRepository.swift in Sources */,
 				1505104B26CD1C4300992A04 /* LadableImage+Reducer.swift in Sources */,
 				1536DF9826DE5D6100A30E91 /* Mock.swift in Sources */,
 				1536DF8826D6661600A30E91 /* Recomendations.swift in Sources */,
@@ -884,7 +930,9 @@
 				1505100C26CA887300992A04 /* SignInView.swift in Sources */,
 				1505100226CA855A00992A04 /* AppEnvironment.swift in Sources */,
 				1505100626CA856900992A04 /* AuthState.swift in Sources */,
+				1503030126F0EDCA003EDC56 /* MapAction.swift in Sources */,
 				1505105C26CE904C00992A04 /* Categories.swift in Sources */,
+				1503030226F0EDCD003EDC56 /* Map+Reducer.swift in Sources */,
 				1536DF3C26D3AD2500A30E91 /* AppView.swift in Sources */,
 				1505104526CD1C2000992A04 /* LadableImageAction.swift in Sources */,
 				1505104226CD1C1000992A04 /* LadableImageState.swift in Sources */,
@@ -1290,6 +1338,14 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		1519080526FA43C7002E648E /* XCRemoteSwiftPackageReference "composable-core-location" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/composable-core-location";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 		1536DF9C26DF8BB100A30E91 /* XCRemoteSwiftPackageReference "ImagePickerView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ralfebert/ImagePickerView";
@@ -1313,6 +1369,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1505105226CE6D8C00992A04 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1519080626FA43C7002E648E /* ComposableCoreLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1519080526FA43C7002E648E /* XCRemoteSwiftPackageReference "composable-core-location" */;
+			productName = ComposableCoreLocation;
 		};
 		1536DF3826D3ACE600A30E91 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

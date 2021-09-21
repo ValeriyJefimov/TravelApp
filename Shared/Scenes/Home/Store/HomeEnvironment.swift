@@ -6,9 +6,10 @@
 //
 
 import ComposableArchitecture
+import ComposableCoreLocation
 
 struct HomeEnvironment {
     let authRepo: AuthRepository
     let networkRepo: NetworkRepository
-    let locationRepo: LocationRepository
+    let locationRepo: LocationManager
 }

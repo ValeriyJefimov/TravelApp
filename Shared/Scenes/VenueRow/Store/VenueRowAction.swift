@@ -8,4 +8,5 @@
 import Foundation
 
 enum VenueRowAction: Equatable {
+    case didSelect(Venue)
 }

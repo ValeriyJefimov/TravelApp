@@ -24,6 +24,8 @@ struct AppState: Equatable {
     var isKeyboardVisible: Bool
     
     var selectedTab: AppTab
+    
+    var mapState: MapState
 }
 
 extension AppState {
@@ -34,6 +36,7 @@ extension AppState {
         user: nil,
         isUserLogged: false,
         isKeyboardVisible: false,
-        selectedTab: .home
+        selectedTab: .home,
+        mapState: .live
     )
 }

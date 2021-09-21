@@ -22,16 +22,21 @@ struct AppView: View {
                                 store: store
                                     .scope(
                                         state: \.homeState!,
-                                        action: { .home($0) }
+                                        action: AppAction.home
                                     )
                             ).ignoresSafeArea(edges: .bottom)
                             
                         case .favorites:
                             Rectangle()
                                 .foregroundColor(.red)
+                            
                         case .map:
-                            Rectangle()
-                                .foregroundColor(.blue)
+                           MapView(store: store
+                                    .scope(
+                                        state: \.mapState,
+                                        action: AppAction.map
+                                    ))
+                            .ignoresSafeArea(edges: .bottom)
                         }
                         
                         VStack {

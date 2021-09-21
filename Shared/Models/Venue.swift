@@ -21,7 +21,7 @@ struct Venue: Equatable, Identifiable, Decodable {
     }
     
     struct Location: Decodable, Equatable {
-        let address: String
+        let address: String?
         let lat: Double
         let lng: Double
         let distance: Double
@@ -36,7 +36,7 @@ struct Venue: Equatable, Identifiable, Decodable {
     let rating: Double?
     let bestPhotoUrl: URL?
     let categories: [Category]
-    let location: Location?
+    let location: Location
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -44,7 +44,7 @@ struct Venue: Equatable, Identifiable, Decodable {
         self.name = try container.decode(String.self, forKey: .name)
         self.rating = try? container.decode(Double.self, forKey: .rating)
         self.categories = (try? container.decode([Category].self, forKey: .categories)) ?? []
-        self.location = try? container.decode(Location.self, forKey: .location)
+        self.location = try container.decode(Location.self, forKey: .location)
         if let photo = try? container.decode(BestPhoto.self, forKey: .bestPhoto) {
             self.bestPhotoUrl = URL(string: photo.prefix + "300x200" + photo.suffix)
         } else {

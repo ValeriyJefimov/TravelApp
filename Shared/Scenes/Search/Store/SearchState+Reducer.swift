@@ -39,31 +39,20 @@ let searchReducerCore = Reducer<SearchState, SearchAction, SearchEnvironment> { 
         result.response?.venues.forEach { state.results.append($0) }
         return .none
         
-    case let .requestLocationResult(.failure(error)) :
-        return .init(value: .presentAlert(error.localizedDescription))
-        
     case .requestLocation:
-        env.locationRepo.requestLocation()
         return env.locationRepo
-            .delegate
-            .compactMap { event -> SearchAction? in
-                switch event {
-                case let .didChangeAuthorization(status):
-                    return nil
-                case let .didUpdateLocations(locations):
-                    return .requestLocationResult(.success(locations.first!))
-                case .didFailWithError:
-                    return .requestLocationResult(.failure(.notAuthorized))
-                }
-            }
-            .eraseToEffect()
+            .requestLocation(id: LocationManagerId())
+            .fireAndForget()
         
-    case let .requestLocationResult(.success(location)):
+    case let .locationManager(.didUpdateLocations(locations)):
         return env
             .networkRepo
-            .run(SearchRequest(query: state.searchText, location: location))
+            .run(SearchRequest(query: state.searchText, location: locations.first!))
             .catchToEffect()
             .map(SearchAction.resultsLoaded)
+        
+    case .locationManager:
+        return .none
         
     case .presentAlert:
         return .none

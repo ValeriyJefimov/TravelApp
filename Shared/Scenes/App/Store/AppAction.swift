@@ -13,6 +13,7 @@ enum AppAction: Equatable {
     
     case auth(AuthAction)
     case home(HomeAction)
+    case map(MapAction)
     
     case userChecked(Bool)
     case userFetched(Result<User, AuthError>)

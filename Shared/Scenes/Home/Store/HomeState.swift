@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import SwiftUI
+import ComposableCoreLocation
 
 struct HomeState: Equatable {
     var user: User
@@ -22,4 +23,6 @@ struct HomeState: Equatable {
     var categoryList: CategoryListState?
     
     var searchState: SearchState?
+    
+    var currentLocation: Location?
 }
