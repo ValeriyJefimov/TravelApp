@@ -18,7 +18,7 @@ struct HomeState: Equatable {
     var isDataFetching: Bool
     var showImagePicker: Bool = false
         
-    var optionSheet: ActionSheetState<HomeAction>?
+    var optionSheet: ConfirmationDialogState<HomeAction>?
     
     var categoryList: CategoryListState?
     

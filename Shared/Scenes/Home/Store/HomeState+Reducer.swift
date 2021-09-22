@@ -51,7 +51,7 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         switch env.locationRepo.authorizationStatus() {
         case .notDetermined:
             return env.locationRepo
-                .requestLocation(id: LocationManagerId())
+                .requestWhenInUseAuthorization(id: LocationManagerId())
                 .fireAndForget()
         case .restricted, .denied:
             return .init(value: .presentAlert(LocationError.notAuthorized.localizedDescription))
@@ -87,12 +87,12 @@ let homeReducerCore = Reducer<HomeState, HomeAction, HomeEnvironment> { state, a
         return .none
 
     case .presentOptionSheet:
-        state.optionSheet = ActionSheetState(
+        state.optionSheet = ConfirmationDialogState(
             title: TextState("Options"),
             buttons: [
-                .default(TextState("Add Photo"), send: .presentImagePicker),
-                .destructive(TextState("Logout"), send: .logout),
-                .cancel()
+                .default(TextState("Add Photo"), action: .send(.presentImagePicker)),
+                .destructive(TextState("Logout"), action: .send(.logout)),
+                .cancel(TextState("Cancel"))
             ]
         )
         return .none

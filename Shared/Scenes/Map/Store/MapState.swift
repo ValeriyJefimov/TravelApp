@@ -12,6 +12,7 @@ struct MapState: Equatable {
     var currentRegion: MapRegion
     var selectedVenue: Venue?
     var results: IdentifiedArrayOf<Venue>
+    var searchButtonVisibility: Bool = false
 }
 
 extension MapState {

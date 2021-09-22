@@ -58,14 +58,13 @@ struct AppView: View {
                             action: { .auth($0) }
                         )
                     )
-                    .alert(
-                        self.store.scope(state: \.alert),
-                        dismiss: .alertDissapears
-                    )
                 }
             }.onAppear {
                 viewStore.send(.appDidFinishLaunching)
-            }
+            }.alert(
+                self.store.scope(state: \.alert),
+                dismiss: .alertDissapears
+            )
         }
     }
 }

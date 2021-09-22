@@ -25,12 +25,13 @@ extension AppState {
         case let .changeSelectedTab(newTab):
             state.selectedTab = newTab
             return .none
-                        
-        //MARK: - Home
-        case let .home(.presentAlert(error)):
+                
+        case .home(.presentAlert(let error)), .map(.presentAlert(let error)):
             state.alert = .init(title: TextState(error))
             return .none
             
+        //MARK: - Home
+    
         case .home(.logoutFinished):
             return .init(value: .userLogouted)
             

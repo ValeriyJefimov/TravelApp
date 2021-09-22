@@ -106,7 +106,7 @@ struct HomeView: View {
                     )) { SearchView(store: $0) }
                 }
                 .scrollOnOverflow()
-                .actionSheet(self.store.scope(state: \.optionSheet), dismiss: .dissmissOptionSheet)
+                .confirmationDialog(self.store.scope(state: \.optionSheet), dismiss: .dissmissOptionSheet)
                 .sheet(isPresented: viewStore.binding(
                     get: \.showImagePicker,
                     send: HomeAction.dissmissImagePicker

@@ -12,6 +12,8 @@ import ComposableArchitecture
 struct MapView: View {
     let store: Store<MapState, MapAction>
     
+    @Environment(\.safeAreaInsets) private var safeAreaInsets
+    
     var body: some View {
         WithViewStore(self.store) { viewStore in
             ZStack {
@@ -46,6 +48,7 @@ struct MapView: View {
                 .onAppear {
                     viewStore.send(.didAppear)
                 }
+                .ignoresSafeArea(edges: .top)
                 
                 if viewStore.selectedVenue != nil {
                     VStack {
@@ -67,6 +70,23 @@ struct MapView: View {
                         
                         Spacer()
                     }
+                }
+                if viewStore.searchButtonVisibility {
+                    VStack {
+                        Spacer()
+                        Button {
+                            viewStore.send(.requestVenues)
+                        } label: {
+                            Text("Search in current location")
+                                .font(.subheadline)
+                                .padding([.leading, .trailing])
+                                .foregroundColor(.gray)
+                                .background(Color.white)
+                                .cornerRadius(5)
+                        }
+                    }
+                    .padding([.bottom], 90 + safeAreaInsets.bottom)
+                    .padding([.leading, .trailing])
                 }
             }
         }

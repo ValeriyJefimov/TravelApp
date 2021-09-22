@@ -24,6 +24,8 @@ enum MapAction: Equatable {
     case venue(VenueRowAction)
     
     case venueSelected(Venue)
+    
+    case searchButtonVisibilityChanged(Bool)
 }
 
 
